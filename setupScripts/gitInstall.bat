@@ -26,8 +26,8 @@ IF ERRORLEVEL 1 (
 )
 
 REM Set your Git username and token here
-set GIT_USER=Tatoloops
-set GIT_TOKEN=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
+set GIT_USER=YourGitUsername
+set GIT_TOKEN=YourGeneratedToken
 
 REM Set up the Git credentials using the credential helper
 git config --global credential.helper store
