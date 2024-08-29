@@ -1,5 +1,9 @@
 @echo off
 
+:: extract argument myPath
+
+set myPath=%1
+
 REM Check if Git is installed
 git --version >nul 2>&1
 IF ERRORLEVEL 1 (
@@ -12,7 +16,7 @@ IF ERRORLEVEL 1 (
     set GIT_INSTALLER=git-installer.exe
 
     REM Download the Git installer using curl or another tool
-    curl -L -o %GIT_INSTALLER% %GIT_URL%
+    curl -L -o %myPath%\%GIT_INSTALLER% %GIT_URL%
 
     REM Run the installer silently (with default options)
     start /wait %GIT_INSTALLER% /SILENT
@@ -36,7 +40,7 @@ REM Store the credentials (GitHub example)
 echo https://%GIT_USER%:%GIT_TOKEN%@github.com > %USERPROFILE%\.git-credentials
 
 REM Set up the repository URL (replace with your repository's URL)
-set REPO_URL=https://github.com/YourUsername/YourRepository.git
+set REPO_URL=https://github.com/tatoloops/YourRepository.git
 
 REM Clone the repository
 git clone %REPO_URL%
