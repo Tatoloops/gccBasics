@@ -1,6 +1,21 @@
 @echo off
 
-set "repoPath=%~1"
+
+setlocal enabledelayedexpansion
+
+:: --- Retrieve Path Section ---
+
+REM Check if an argument is provided
+if "%~1"=="" (
+    REM If no argument is provided, set the default value and create the directory
+    set "repoPath=%USERPROFILE%\Librarium\repositories"
+    if not exist "%repoPath%" (
+        mkdir "%repoPath%"
+    )
+) else (
+    REM If an argument is provided, use it
+    set "repoPath=%~1"
+)
 
 
 REM Set your Git username and token here
@@ -18,5 +33,6 @@ set "REPO_URL=https://github.com/tatoloops/gccBasics.git"
 
 REM Clone the repository into the specified directory
 git clone "%REPO_URL%" "%repoPath%"
+
 
 echo - git token added and repo gccBasics cloned!

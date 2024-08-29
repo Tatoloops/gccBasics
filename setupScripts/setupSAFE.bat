@@ -24,3 +24,13 @@ mkdir "%userFolder%\%folderName%"
 set myPath="%userFolder%\%folderName%"
 
 echo New folder "%folderName%" created in "%userFolder%"
+
+
+:: 1. download mingw64 and add to path
+call "%myPath%\gccBasics-main\setupScripts\slowSetup\mingw64Install.bat" %myPath% 
+
+:: 2. install sublime text editor
+call "%myPath%\gccBasics-main\setupScripts\slowSetup\sublimeInstall.bat" %myPath% 
+
+:: 3. install git
+call "%myPath%\gccBasics-main\setupScripts\slowSetup\gitInstall.bat" %myPath% 
