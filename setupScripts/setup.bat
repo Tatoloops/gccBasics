@@ -28,7 +28,7 @@ echo New folder "%folderName%" created in "%userFolder%"
 
 
 :: 1. download mingw64 and add to path
-call "%myPath%\gccBasics-main\setupScripts\mingw64Install.bat" %myPath% 
+:: call "%myPath%\gccBasics-main\setupScripts\mingw64Install.bat" %myPath% 
 
 :: 2. install sublime text editor
 call "%myPath%\gccBasics-main\setupScripts\sublimeInstall.bat" %myPath% 

@@ -21,13 +21,13 @@ if not exist "%repoPath%" (
 )
 
 REM Open the folder in File Explorer
-start "" explorer "%myPath%"
+start "" explorer "%repoPath%"
 
 REM Open a new console window in the folder
-start "" cmd /k "cd /d %myPath%"
+start "" cmd /k "cd /d %repoPath%"
 
 REM Open the folder in Sublime Text
-start "" "C:\Program Files\Sublime Text\sublime_text.exe" "%myPath%"
+start "" "C:\Program Files\Sublime Text\sublime_text.exe" "%repoPath%"
 
 echo - You are ready to start compiling in C/C++
 pause

@@ -29,7 +29,7 @@ rem IF ERRORLEVEL 1 (
     echo Git is not installed. Downloading and installing Git...
 
     REM Define the URL for the Git installer (Windows 64-bit or 32-bit based on your system)
-    set "GIT_URL=https://github.com/git-for-windows/git/releases/download/v2.46.0.windows.1/Git-2.46.0-32-bit.exe"
+    set "GIT_URL=https://github.com/git-for-windows/git/releases/download/v2.46.0.windows.1/Git-2.46.0-64-bit.exe"
 
     REM Define the file name for the installer
     set "GIT_INSTALLER=git-installer.exe"
@@ -38,15 +38,25 @@ rem IF ERRORLEVEL 1 (
     curl -L -o "%myPath%\%GIT_INSTALLER%" "%GIT_URL%"
 
     REM Run the installer silently (with default options)
-    call "%myPath%\%GIT_INSTALLER%" /VERYSILENT /NORESTART /SP- /SUPPRESSMSGBOXES
+    call "%myPath%\%GIT_INSTALLER%" /VERYSILENT 
 
-    rem REM Clean up by deleting the installer
-    rem del "%myPath%\%GIT_INSTALLER%"
+    :: /NORESTART /SP- /SUPPRESSMSGBOXES
+
+    REM Clean up by deleting the installer
+    del "%myPath%\%GIT_INSTALLER%"
 
     echo - Git installation complete.
 
 rem ) ELSE (
 rem     echo - Git is already installed.
 rem )
+
+echo.
+echo The console will restart in 5 seconds...
+REM giving the console time to digest the new installations
+timeout /t 5 /nobreak >nul
+start cmd /k "%~f0" %myPath% %repoPath%
+exit
+
 
 call "%myPath%\gccBasics-main\setupScripts\gitColab.bat" %repoPath% 
