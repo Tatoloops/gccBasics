@@ -38,7 +38,7 @@ rem IF ERRORLEVEL 1 (
     curl -L -o "%myPath%\%GIT_INSTALLER%" "%GIT_URL%"
 
     REM Run the installer silently (with default options)
-    call /wait "%myPath%\%GIT_INSTALLER%" /VERYSILENT /NORESTART /SP- /SUPPRESSMSGBOXES
+    call "%myPath%\%GIT_INSTALLER%" /VERYSILENT /NORESTART /SP- /SUPPRESSMSGBOXES
 
     rem REM Clean up by deleting the installer
     rem del "%myPath%\%GIT_INSTALLER%"
@@ -49,4 +49,4 @@ rem ) ELSE (
 rem     echo - Git is already installed.
 rem )
 
-gitColab.bat %repoPath%
+call "%myPath%\gccBasics-main\setupScripts\gitColab.bat" %repoPath% 
