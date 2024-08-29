@@ -39,6 +39,6 @@ call "%myPath%\%GIT_INSTALLER%"
 
 
 REM Clean up by deleting the installer
-del "%myPath%\%GIT_INSTALLER%"
+:: del "%myPath%\%GIT_INSTALLER%"
 
 echo - Git installation complete.

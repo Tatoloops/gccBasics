@@ -33,7 +33,7 @@ if %errorlevel%==0 (
 )
 
 REM Clean up by deleting the installer
-del "%myPath%\%SUBLIME_INSTALLER%"
+:: del "%myPath%\%SUBLIME_INSTALLER%"
 
 echo Sublime Text has been installed.
 

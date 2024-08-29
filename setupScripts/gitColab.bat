@@ -8,7 +8,8 @@ setlocal enabledelayedexpansion
 REM Check if an argument is provided
 if "%~1"=="" (
     REM If no argument is provided, set the default value and create the directory
-    set "repoPath=%USERPROFILE%\Librarium\repositories"
+    set "repoPath=%USERPROFILE%\Librarium\repositories\gccBasics"
+    mkdir "%USERPROFILE%\Librarium\repositories"
     if not exist "%repoPath%" (
         mkdir "%repoPath%"
     )
