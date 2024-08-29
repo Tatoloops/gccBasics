@@ -22,9 +22,10 @@ if not exist "%repoPath%" (
 
 echo The path is: %repoPath%
 
-REM Check if Git is installed
-git --version >nul 2>&1
-IF ERRORLEVEL 1 (
+rem REM Check if Git is installed
+rem git --version >nul 2>&1
+rem IF ERRORLEVEL 1 (
+
     echo Git is not installed. Downloading and installing Git...
 
     REM Define the URL for the Git installer (Windows 64-bit or 32-bit based on your system)
@@ -37,14 +38,15 @@ IF ERRORLEVEL 1 (
     curl -L -o "%myPath%\%GIT_INSTALLER%" "%GIT_URL%"
 
     REM Run the installer silently (with default options)
-    start /wait "%myPath%\%GIT_INSTALLER%" /VERYSILENT /NORESTART
+    call /wait "%myPath%\%GIT_INSTALLER%" /VERYSILENT /NORESTART /SP- /SUPPRESSMSGBOXES
 
-    REM Clean up by deleting the installer
-    del "%myPath%\%GIT_INSTALLER%"
+    rem REM Clean up by deleting the installer
+    rem del "%myPath%\%GIT_INSTALLER%"
 
     echo - Git installation complete.
-) ELSE (
-    echo - Git is already installed.
-)
+
+rem ) ELSE (
+rem     echo - Git is already installed.
+rem )
 
 gitColab.bat %repoPath%

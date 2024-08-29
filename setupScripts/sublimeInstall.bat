@@ -21,7 +21,7 @@ REM Download the Sublime Text installer using curl
 curl -L -o "%myPath%\%SUBLIME_INSTALLER%" "%SUBLIME_URL%"
 
 REM Run the installer silently (with default options)
-start /wait "%myPath%\%SUBLIME_INSTALLER%" /VERYSILENT /NORESTART
+call /wait "%myPath%\%SUBLIME_INSTALLER%" /VERYSILENT /NORESTART /SP- /SUPPRESSMSGBOXES
 
 REM Check if installation was successful
 if %errorlevel%==0 (
