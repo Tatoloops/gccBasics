@@ -19,4 +19,4 @@ set "REPO_URL=https://github.com/tatoloops/gccBasics.git"
 REM Clone the repository into the specified directory
 git clone "%REPO_URL%" "%repoPath%"
 
-echo - git token added!
+echo - git token added and repo gccBasics cloned!

@@ -27,16 +27,16 @@ echo New folder "%folderName%" created in "%userFolder%"
 
 
 :: 1. download mingw64 and add to path
-mingw64Install.bat %myPath%
+call "%myPath%\gccBasics-main\setupScripts\mingw64Install.bat" %myPath% 
 
 :: 2. install sublime text editor
-sublimeInstall.bat %myPath%
+call "%myPath%\gccBasics-main\setupScripts\sublimeInstall.bat" %myPath% 
 
 :: 3. install git
-gitInstall.bat %myPath%
+call "%myPath%\gccBasics-main\setupScripts\gitInstall.bat" %myPath% 
 
 :: 4. add git token to colaborate (executed already from gitInstall.bat)
-:: gitColab.bat
+call "%myPath%\gccBasics-main\setupScripts\gitColab.bat" %myPath% 
 
 :: 5. open folder console and text editor sublime on the following path %myPath$
-starts.bat %myPath%\
+call "%myPath%\gccBasics-main\setupScripts\starts.bat" %myPath%
