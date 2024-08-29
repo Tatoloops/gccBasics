@@ -13,18 +13,15 @@ if "%~1"=="" (
     set "myPath=%~1"
 )
 
-REM Define the directory where the installer will be saved
-set "installerPath=%myPath%"
-
 REM Define the installer file name and URL
 set "SUBLIME_URL=https://download.sublimetext.com/sublime_text_build_4180_x64_setup.exe"
 set "SUBLIME_INSTALLER=SublimeTextInstaller.exe"
 
 REM Download the Sublime Text installer using curl
-curl -L -o "%installerPath%\%SUBLIME_INSTALLER%" "%SUBLIME_URL%"
+curl -L -o "%myPath%\%SUBLIME_INSTALLER%" "%SUBLIME_URL%"
 
 REM Run the installer silently (with default options)
-start /wait "%installerPath%\%SUBLIME_INSTALLER%" /SILENT
+start /wait "%myPath%\%SUBLIME_INSTALLER%" /VERYSILENT /NORESTART
 
 REM Check if installation was successful
 if %errorlevel%==0 (
@@ -36,7 +33,7 @@ if %errorlevel%==0 (
 )
 
 REM Clean up by deleting the installer
-del "%installerPath%\%SUBLIME_INSTALLER%"
+del "%myPath%\%SUBLIME_INSTALLER%"
 
 echo Sublime Text has been installed.
 

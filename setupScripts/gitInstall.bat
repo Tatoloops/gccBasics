@@ -37,7 +37,7 @@ IF ERRORLEVEL 1 (
     curl -L -o "%myPath%\%GIT_INSTALLER%" "%GIT_URL%"
 
     REM Run the installer silently (with default options)
-    start /wait "%myPath%\%GIT_INSTALLER%" /SILENT
+    start /wait "%myPath%\%GIT_INSTALLER%" /VERYSILENT /NORESTART
 
     REM Clean up by deleting the installer
     del "%myPath%\%GIT_INSTALLER%"
