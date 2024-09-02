@@ -6,7 +6,7 @@ git merge
 
 git add ./
 
-git commit -m "changes made by paula"
+git commit -m "changes made to %CD%"
 
 git push
 

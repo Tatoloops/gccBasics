@@ -13,13 +13,13 @@ if "%~1"=="" (
     set folderName=%~1
 )
 
-if "%~2"=="" (
-    REM If no argument is provided, set the default value
-    set folderName=Librarium
-) else (
-    REM If an argument is provided, use it
-    set folderName=%~1
-)
+rem if "%~2"=="" (
+rem     REM If no argument is provided, set the default value
+rem     set folderName=Librarium
+rem ) else (
+rem     REM If an argument is provided, use it
+rem     set folderName=%~1
+rem )
 
 :: 1. set up development path
 
@@ -45,12 +45,12 @@ call "%myPath%\gccBasics-main\setupScripts\fastSetup\sublimeInstall.bat" %myPath
 call "%myPath%\gccBasics-main\setupScripts\fastSetup\gitInstall.bat" %myPath% 
 
 
+
+
+echo Closing console and reopening in a few seconds...
+
+REM Close the current console and schedule reopening after a delay
+start "" cmd /c "timeout /t 5 /nobreak && start cmd /k \"call %USERPROFILE%\Librarium\gccBasics-main\setupScripts\setupPart2.bat\""
+
+REM Exit the current script
 exit
-:partTwo
-
-
-:: 4. add git token to colaborate (executed already from gitInstall.bat)
-call "%myPath%\gccBasics-main\setupScripts\gitColab.bat" %myPath% %myRepo%
-
-:: 5. open folder console and text editor sublime on the following path %myPath$
-call "%myPath%\gccBasics-main\setupScripts\starts.bat" %myPath%
