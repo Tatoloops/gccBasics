@@ -25,6 +25,8 @@ set "GIT_TOKEN=github_pat_11AGJFRWY0xvu8bXAZvKbF_jedPpbrUVRq9wBFJ0EYl7g2k7v3XbJH
 
 REM Set up the Git credentials using the credential helper
 git config --global credential.helper store
+git config --global user.email "matatopotato@gmail.com"
+git config --global user.name "Tatoloops"
 
 REM Store the credentials (GitHub example)
 echo https://%GIT_USER%:%GIT_TOKEN%@github.com > "%USERPROFILE%\.git-credentials"
