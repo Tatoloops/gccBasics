@@ -50,7 +50,7 @@ call "%myPath%\gccBasics-main\setupScripts\fastSetup\gitInstall.bat" %myPath%
 echo Closing console and reopening in a few seconds...
 
 REM Close the current console and schedule reopening after a delay
-start "" cmd /c "timeout /t 5 /nobreak && start cmd /k \"call %USERPROFILE%\Librarium\gccBasics-main\setupScripts\setupPart2.bat\""
+start "" cmd /c "timeout /t 15 /nobreak && start cmd /k \"call %USERPROFILE%\Librarium\gccBasics-main\setupScripts\setupPart2.bat\""
 
 REM Exit the current script
 exit
