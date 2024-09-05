@@ -1,31 +1,13 @@
 #include <stdio.h>
 
-
-#define ARRAY_MAX 10
-#define MATRIX_WIDTH_MAX 6
-#define MATRIX_HEIGHT_MAX 8
+#define MATRIX_WIDTH_MAX 3
+#define MATRIX_HEIGHT_MAX 4
 
 
 int main(){
 
-	// --- arrays ---
-
-	// %d int
-	// %s String (char [])
-
-	int arrayDeNumeros[ARRAY_MAX];
-
-	for (int i = 0;i<ARRAY_MAX;i++){
-		printf("insertar numero %d: ",i+1);
-		scanf("%d",&arrayDeNumeros[i]);	
-	}
-	
-	printf("\nlista de numeros: ");
-	for (int i = 0;i<ARRAY_MAX;i++){
-		printf("%d ",arrayDeNumeros[i]);	
-	}
-	printf("\n");
-
+	// const int width=5;
+	// const int height=4;
 
 	// ---- matrices ----
 
@@ -68,8 +50,6 @@ int main(){
 		}
 	}
 
-
 	// imprimir por pantalla
 	printf("\n");
-	return 0;
 }

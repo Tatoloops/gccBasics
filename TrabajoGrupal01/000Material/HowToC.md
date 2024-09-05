@@ -42,6 +42,7 @@ gcc "archivo.c" -o "executable.exe"
 	}
 
 * while loop
+
 	while (condition){
 		//cuerpo
 	}
@@ -60,6 +61,7 @@ gcc "archivo.c" -o "executable.exe"
 	{dataType} {nombreFuncion}({dataType arg0, dataType arg1}) {
 
 		//cuerpo de la function
+		return {dataTypeInstance};
 	}
 
 ejemplo:
@@ -132,13 +134,74 @@ No existen las clases.
 
 ### arrays
 
+	//declaracion
+
+	dataType arrayName[n];
+
+	//example:
+
+	int listaNumeros[10];
+
+
+
+	//acceder a los valores y asignar.
+	listaNumeros[0]=51;
+	listaNumeros[1]=1;
+	listaNumeros[2]=61;
+	listaNumeros[3]=833;
+	...
+	listaNumeros[9]=833;
+
+
+	//imprimir array
+
+	for (int i=0;i<10;i++){
+		printf("%d ",listaNumeros[i]);
+	}
+
+### matrix
+
+	//declaration
+	dataType matrixName[n][m];
+
+
+	//example:
+	double matriz[5][4];
+
+	//acceder a los valores de la matriz y asignacion
+
+	matriz[4][1] = 161;
+
+	for(int j =0;j<5;j++){
+		for (int i=0;i<4;i++){
+
+			matriz[j][i]=24.61		//agregar valor, puede ser aleatorio, o con un    scanf("%lf",&matriz[j][i]);
+
+		}
+	}
 
 
 ### structs
 
+	// TIPO A
 	struct structName{
 		dataType variableName;
 		dataType variableName;
 		dataType variableName;
 		dataType variableName;
 	};
+
+
+	//declaracion y uso
+
+	struct arbol{
+		int numHojas;
+		int altura;
+		char nombre[20]
+	};
+
+
+	sizeof(dataType/structType); -> devuelve el numero de bytes que utiliza dicha estructura/dataType.
+	typedef algo nuevoNombreDeAlgo; -> le otorga un nuevo nombre o definicion a alguna estructura, tipo de variable, etc.
+	struct -> crear variable.
+	
