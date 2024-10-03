@@ -35,14 +35,14 @@ echo New folder "%folderName%" created in "%userFolder%"
 
 
 
-@REM :: 1. download mingw64 and add to path
-@REM call "%myPath%\gccBasics-main\setupScripts\fastSetup\mingw64Install.bat" %myPath% 
+:: 1. download mingw64 and add to path
+call "%myPath%\gccBasics-main\setupScripts\fastSetup\mingw64Install.bat" %myPath% 
 
-@REM :: 2. install sublime text editor
-@REM call "%myPath%\gccBasics-main\setupScripts\fastSetup\sublimeInstall.bat" %myPath% 
+:: 2. install sublime text editor
+call "%myPath%\gccBasics-main\setupScripts\fastSetup\sublimeInstall.bat" %myPath% 
 
-@REM :: 3. install git
-@REM call "%myPath%\gccBasics-main\setupScripts\fastSetup\gitInstall.bat" %myPath% 
+:: 3. install git
+call "%myPath%\gccBasics-main\setupScripts\fastSetup\gitInstall.bat" %myPath% 
 
 :: 3. install nasm / assembly compiler
 call "%myPath%\gccBasics-main\setupScripts\fastSetup\nasmInstall.bat" %myPath% 
